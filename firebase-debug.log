@@ -1,0 +1,37 @@
+[debug] [2021-01-30T16:55:55.777Z] ----------------------------------------------------------------------
+[debug] [2021-01-30T16:55:55.780Z] Command:       /Users/tosincoker/.volta/tools/image/node/12.18.2/bin/node /Users/tosincoker/Projects/AngularJs/Organic-Market-Store/node_modules/.bin/firebase emulators:start
+[debug] [2021-01-30T16:55:55.780Z] CLI Version:   9.2.2
+[debug] [2021-01-30T16:55:55.780Z] Platform:      darwin
+[debug] [2021-01-30T16:55:55.780Z] Node Version:  v12.18.2
+[debug] [2021-01-30T16:55:55.783Z] Time:          Sat Jan 30 2021 17:55:55 GMT+0100 (West Africa Standard Time)
+[debug] [2021-01-30T16:55:55.783Z] ----------------------------------------------------------------------
+[debug] [2021-01-30T16:55:55.783Z] 
+[debug] [2021-01-30T16:55:55.803Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-30T16:55:55.803Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2021-01-30T16:55:55.890Z] [hub] writing locator at /var/folders/y0/z_kpcdqx5fsd079j69wxrc9m0000gn/T/hub-organic-shop-69810.json
+[debug] [2021-01-30T16:55:55.918Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/organic-shop-69810/webApps/-/config [none]
+[debug] [2021-01-30T16:55:56.925Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/organic-shop-69810/webApps/-/config 200
+[debug] [2021-01-30T16:55:56.926Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/organic-shop-69810/webApps/-/config {"projectId":"organic-shop-69810","appId":"1:1050881838708:web:e3bd69b452b138f8594b21","databaseURL":"https://organic-shop-69810.firebaseio.com","storageBucket":"organic-shop-69810.appspot.com","apiKey":"AIzaSyBKtZN_EXz49gGtZsotvdhPvnXBBREeltQ","authDomain":"organic-shop-69810.firebaseapp.com","messagingSenderId":"1050881838708","measurementId":"G-HRZ3ZEMKYF"}
+[info] i  hosting: Serving hosting files from: dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[warn] ⚠  emulators: The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the ---project flag. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the ---project flag."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ localhost:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: None
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [30/Jan/2021:16:56:07 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [30/Jan/2021:16:56:07 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53\""}}
+[info] i  hosting: 127.0.0.1 - - [30/Jan/2021:16:56:08 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [30/Jan/2021:16:56:08 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53\""}}
+[info] i  hosting: 127.0.0.1 - - [30/Jan/2021:16:56:08 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [30/Jan/2021:16:56:08 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53\""}}
+[info] i  hosting: 127.0.0.1 - - [30/Jan/2021:16:56:35 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [30/Jan/2021:16:56:35 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36 Edg/88.0.705.53\""}}
