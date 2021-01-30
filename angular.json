@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Organic-Market-Store"
+  "defaultProject": "Organic-Market-Store",
+  "cli": {
+    "analytics": "555b0a70-2b85-4a00-9a1a-273161c4eafe"
+  }
 }
