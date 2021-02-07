@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of filteredProducts">
+    <tr *ngFor="let p of filteredProducts | paginate: config">
       <td>{{p.payload.val().title}}</td>
       <td>{{p.payload.val().price}}</td>
       <td>
@@ -25,3 +25,5 @@
     </tr>
   </tbody>
 </table>
+
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

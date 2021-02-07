@@ -12,6 +12,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   products: any[] = [];
   filteredProducts: any[] = [];
   subscription: Subscription;
+  config: any;
 
   constructor(private productService: ProductService) {
     this.subscription = this.productService.getAll().snapshotChanges().subscribe(products => this.filteredProducts = this.products = products)
@@ -23,6 +24,15 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
     //     return {key, data};           // or {key, ...data} in case data is Obj
     //   });
     // }));
+    this.config = {
+      itemsPerPage: 5,
+      currentPage: 1,
+      totalItems: this.products.length,
+    };
+  }
+
+  pageChanged(event: number){
+    this.config.currentPage = event;
   }
 
   ngOnDestroy(): void {
@@ -39,6 +49,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
     this.filteredProducts = (query) ?
       this.products.filter(product => product.payload.val().title.toLowerCase().includes(query.toLowerCase())) :
       this.products;
+
+    this.config.currentPage = 1;
   }
 
   ngOnInit(): void {
