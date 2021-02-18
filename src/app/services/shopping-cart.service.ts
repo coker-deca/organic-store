@@ -49,7 +49,7 @@ export class ShoppingCartService {
 
   private updateItem(product: any, change: number){
     let cartId = this.getOrCreateCartId();
-    let item$ = this.getItem(cartId, product.key);
+    let item$ = this.getItem(cartId, product.key || product.$key);
     item$.snapshotChanges().pipe(take(1)).subscribe((item: any) => {
       if (item.payload.exists()) {
         let quantity = item.payload.val().quantity;
