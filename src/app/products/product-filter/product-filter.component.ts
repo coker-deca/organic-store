@@ -11,7 +11,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class ProductFilterComponent {
 
   @Input('category') category: any;
-  categories$: Observable<unknown[]>;
+  categories$: Observable<any[]>;
 
   constructor(categoryService: CategoryService) {
     this.categories$ = categoryService.getAll().snapshotChanges().pipe(map(value => value))

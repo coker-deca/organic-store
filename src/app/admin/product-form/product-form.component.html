@@ -36,8 +36,8 @@
         <label for="imageUrl">Image URL</label>
         <input #imageUrl='ngModel' [(ngModel)]="product.imageUrl" name="imageUrl" type="text" class="form-control" required url>
         <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
-          <div *ngIf="imageUrl.errors.required">ImageUrl is required.</div>
-          <div *ngIf="imageUrl.errors.url">Please enter a valid URL.</div>
+          <div *ngIf="imageUrl.errors?.required">ImageUrl is required.</div>
+          <div *ngIf="imageUrl.errors?.url">Please enter a valid URL.</div>
         </div>
       </div>
       <button class="btn btn-primary">Save</button>

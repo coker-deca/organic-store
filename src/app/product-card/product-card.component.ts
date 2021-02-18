@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShoppingCart } from '../models/shopping-carts';
 import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
@@ -10,23 +11,11 @@ export class ProductCardComponent {
 
   @Input('product') product: any;
   @Input('show-actions') showActions = true;
-  @Input('shopping-cart') shoppinCart: any;
+  @Input('shopping-cart') shoppingCart!: ShoppingCart;
 
   constructor(private cartService: ShoppingCartService) { }
 
   addToCart() {
     this.cartService.addToCart(this.product)
   }
-
-  removeFromCart() {
-    this.cartService.removeFromCart(this.product)
-  }
-
-  getQuantity() {
-    if (!this.shoppinCart) return 0;
-
-    let item = this.shoppinCart.items[this.product.key]
-    return item ? item.quantity : 0;
-  }
-
 }

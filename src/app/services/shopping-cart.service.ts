@@ -18,12 +18,12 @@ export class ShoppingCartService {
 
   getCart() {
     let cartId = this.getOrCreateCartId();
-    return this.db.object('/shopping-cart/' + cartId)
-    .valueChanges().pipe(map((item: any) => new ShoppingCart(item.items)))
+    return this.db.object('/shopping-carts/' + cartId)
+    .valueChanges().pipe(map((item: any) => new ShoppingCart(item.items!)))
   }
 
   private getItem(cartId: string, productId: string){
-    return this.db.object('/shopping-cart/' + cartId + '/items/' + productId);
+    return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
   }
   private getOrCreateCartId(){
     let cartId = localStorage.getItem('cartId');
@@ -34,19 +34,29 @@ export class ShoppingCartService {
   }
 
   addToCart(product: any){
-    this.updateItemQuantity(product,1)
+    this.updateItem(product,1)
   }
 
   removeFromCart(product: any) {
-    this.updateItemQuantity(product, -1)
+    this.updateItem(product, -1)
   }
 
-  private updateItemQuantity(product: any, change: number){
+  private updateItem(product: any, change: number){
+    console.log(product.key, change)
     let cartId = this.getOrCreateCartId();
     let item$ = this.getItem(cartId, product.key);
     item$.snapshotChanges().pipe(take(1)).subscribe((item: any) => {
-      if (item.payload.exists()) item$.update({ quantity: item.payload.val().quantity + change });
-      else item$.set({ product: product.payload.val(), quantity: 1 });
+      console.log(item.payload.val());
+      if (item.payload.exists()) {
+        let quantity = item.payload.val().quantity;
+        (quantity === 0) ? item$.remove : item$.update({ quantity: quantity  + change});
+      }
+      else item$.set({
+        // product: product.payload.val(),
+        title: product.payload.val().title,
+        imageUrl: product.payload.val().imageUrl,
+        price: product.payload.val().price,
+        quantity: 1 });
     });
   }
 }
