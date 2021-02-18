@@ -10,23 +10,23 @@ export class ProductService {
   constructor(private db: AngularFireDatabase) { }
 
   create(product: Product) {
-    return this.db.list('/product/products').push(product);
+    return this.db.list('/products').push(product);
   }
 
   getAll() {
-    return this.db.list('/product/products',
+    return this.db.list('/products',
       ref => ref.orderByChild('title'))
   }
 
   get(productId: string) {
-    return this.db.object('/product/products/' + productId).valueChanges();
+    return this.db.object('/products/' + productId).valueChanges();
   }
 
   update(productId: string, product: Partial<Product>) {
-    return this.db.object('/product/products/' + productId).update(product);
+    return this.db.object('/products/' + productId).update(product);
   }
 
   delete(productId: string) {
-    return this.db.object('/product/products/' + productId).remove();
+    return this.db.object('/products/' + productId).remove();
   }
 }
