@@ -1,1 +1,37 @@
-<p>check-out works!</p>
+<div class="row">
+  <div class="col-md-6 col-lg-6">
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input #name='ngModel' [(ngModel)]="shippingDetails.name" id="name" name="name" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+          <div *ngIf="name.errors?.required">Name is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <div>
+          <input #address='ngModel' [(ngModel)]="shippingDetails.address" id="address" name="address" type="text" class="form-control" required [min]='0'>
+        </div>
+        <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+          <div *ngIf="address.errors?.required">Address is required.</div>
+        </div>
+        <div>
+          <input #line2='ngModel' [(ngModel)]="shippingDetails.line2" id="line2" name="line2" type="text" class="form-control" required [min]='0'>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input #city='ngModel' [(ngModel)]="shippingDetails.city" name="city" type="text" class="form-control" required url>
+        <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+          <div *ngIf="city.errors?.required">City is required.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary"  (click)="save()">Place Order</button>
+    </form>
+  </div>
+  <div class="col-md-6 col-lg-6">
+  </div>
+</div>
