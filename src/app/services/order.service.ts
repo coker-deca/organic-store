@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './shopping-cart.service';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 
@@ -6,9 +7,11 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class OrderService {
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private cartServices: ShoppingCartService) { }
 
-  storeOrder(order: any){
-    return this.db.list('/orders').push(order)
+  placeOrder(order: any){
+    let result = this.db.list('/orders').push(order);
+    this.cartServices.clearCart();
+    return result;
   }
 }
