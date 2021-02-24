@@ -16,8 +16,8 @@ export class OrderService {
   getOrdersByUsers(userId: string){
     return this.db.list('/orders', ref =>
     ref.orderByChild("userId")
-    .equalTo('userId'))
-    .valueChanges()
+    .equalTo(userId))
+    .snapshotChanges()
   }
   placeOrder(order: any){
     let result = this.db.list('/orders').push(order);
