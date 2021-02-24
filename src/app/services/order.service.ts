@@ -9,6 +9,16 @@ export class OrderService {
 
   constructor(private db: AngularFireDatabase, private cartServices: ShoppingCartService) { }
 
+  getOrders(){
+    return this.db.list('/orders');
+  }
+
+  getOrdersByUsers(userId: string){
+    return this.db.list('/orders', ref =>
+    ref.orderByChild("userId")
+    .equalTo('userId'))
+    .valueChanges()
+  }
   placeOrder(order: any){
     let result = this.db.list('/orders').push(order);
     this.cartServices.clearCart();

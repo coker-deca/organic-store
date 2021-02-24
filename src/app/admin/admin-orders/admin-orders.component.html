@@ -1,1 +1,17 @@
-<p>admin-orders works!</p>
+<table class="table">
+  <thead class="col-12">
+    <tr>
+      <th>Customer</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders | paginate: config">
+      <td>{{order?.payload.val().shippingDetails.name}}</td>
+      <td>{{order?.payload.val().datePlaced}}</td>
+      <td><a [routerLink]="['/admin/products/', order?.payload.key]">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
