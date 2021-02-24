@@ -10,7 +10,7 @@
     <tr *ngFor="let order of orders | paginate: config">
       <td>{{order?.payload.val().shippingDetails.name}}</td>
       <td>{{order?.payload.val().datePlaced}}</td>
-      <td><a [routerLink]="['/admin/products/', order?.payload.key]">Edit</a></td>
+      <td><a [routerLink]="['/orders/', order?.payload.key]">Edit</a></td>
     </tr>
   </tbody>
 </table>
