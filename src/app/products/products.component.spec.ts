@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { ProductsComponent } from './products.component';
 
@@ -21,5 +22,12 @@ describe('ProductsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have a total 6 filter elements', () => {
+    let de =fixture.debugElement.query(By.css('.list-group'));
+    let el: HTMLElement = de.nativeElement;
+
+    expect(el.childElementCount).toBe(6);
   });
 });
